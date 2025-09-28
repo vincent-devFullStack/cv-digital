@@ -302,6 +302,66 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
+/* Bouton Télécharger mon CV */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  padding: 0.9rem 1.2rem;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.2px;
+
+  background: linear-gradient(135deg, #4ecdc4 0%, #45b7d1 100%);
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(78, 205, 196, 0.38);
+}
+
+/* Variante “fantôme” si tu veux un style secondaire */
+.download-btn--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+.download-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Petite pastille icône (SVG mask) */
+.download-btn__icon {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000"><path d="M5 20h14v-2H5v2ZM12 2v10.586l3.293-3.293 1.414 1.414L12 16.414l-4.707-4.707 1.414-1.414L11 12.586V2h1Z"/></svg>')
+    no-repeat center / contain;
+}
+
+.download-btn__icon.is-eye {
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000"><path d="M12 4.5c-5 0-9.27 3.11-11 7.5 1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 12a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm0-7.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>')
+    no-repeat center / contain;
+}
+
+/* Placement sympa dans la colonne droite */
+.cv-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
 /* Animations */
 @keyframes popInCentered {
   from {
@@ -380,5 +440,11 @@
 
   .contact-icon {
     align-self: center;
+  }
+  .download-btn {
+    width: 100%;
+  }
+  .cv-actions {
+    gap: 0.6rem;
   }
 }
