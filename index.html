@@ -18,19 +18,23 @@
     />
   </head>
   <body>
-    <div class="navbar-trigger"></div>
-    <nav class="navbar">
+    <a class="navbar-trigger" href="#menu" aria-label="Ouvrir le menu"></a>
+
+    <nav id="menu" class="navbar" aria-label="Navigation principale">
       <div class="navbar-content">
         <a href="index.html" class="navbar-logo">Vincent S.</a>
-        <ul class="navbar-links">
+        <ul class="navbar-links" role="list">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="formations.html">Formations</a></li>
           <li><a href="profil.html">Compétences</a></li>
           <li><a href="projets.html">Projets</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+
+        <a class="navbar-close" href="#" aria-label="Fermer le menu"></a>
       </div>
     </nav>
+
     <div class="background-dots">
       <div class="dot dot-1"></div>
       <div class="dot dot-2"></div>

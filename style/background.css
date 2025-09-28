@@ -21,6 +21,7 @@ body {
   position: relative;
 }
 
+/* Voile au-dessus de la page (floutage desktop uniquement) */
 body::before {
   content: "";
   position: fixed;
@@ -29,25 +30,27 @@ body::before {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.25s ease;
-
   background: rgba(52, 98, 189, 0.189);
   backdrop-filter: blur(10px) saturate(120%);
   -webkit-backdrop-filter: blur(10px) saturate(120%);
 }
 
+/* Affiche le voile au survol / focus (desktop) */
 body:has(.navbar:hover)::before,
 body:has(.navbar:focus-within)::before,
 body:has(.navbar-trigger:hover)::before {
   opacity: 1;
 }
 
+/* === Fond animé fiable (iOS) === */
 .background-dots {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0; /* au lieu de -1 */
+  pointer-events: none;
 }
 
 .dot {
@@ -106,6 +109,7 @@ body:has(.navbar-trigger:hover)::before {
   }
 }
 
+/* === Dots positions === */
 .dot-1 {
   top: 10%;
   left: 10%;
@@ -114,7 +118,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 0s;
   animation-duration: 12s, 2.5s;
 }
-
 .dot-2 {
   top: 20%;
   left: 80%;
@@ -123,7 +126,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 0.2s;
   animation-duration: 18s, 3s;
 }
-
 .dot-3 {
   top: 50%;
   left: 5%;
@@ -132,7 +134,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 0.4s;
   animation-duration: 14s, 2.8s;
 }
-
 .dot-4 {
   top: 70%;
   left: 90%;
@@ -141,7 +142,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 0.8s;
   animation-duration: 16s, 3.2s;
 }
-
 .dot-5 {
   top: 30%;
   left: 50%;
@@ -150,7 +150,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 1.5s;
   animation-duration: 13s, 2.7s;
 }
-
 .dot-6 {
   top: 80%;
   left: 20%;
@@ -159,7 +158,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 2s;
   animation-duration: 20s, 3.5s;
 }
-
 .dot-7 {
   top: 15%;
   left: 70%;
@@ -168,7 +166,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 2.6s;
   animation-duration: 15s, 2.2s;
 }
-
 .dot-8 {
   top: 90%;
   left: 60%;
@@ -177,7 +174,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 3s;
   animation-duration: 17s, 4s;
 }
-
 .dot-9 {
   top: 40%;
   left: 15%;
@@ -186,7 +182,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 4s;
   animation-duration: 19s, 2.9s;
 }
-
 .dot-10 {
   top: 60%;
   left: 85%;
@@ -195,7 +190,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 5s;
   animation-duration: 11s, 3.1s;
 }
-
 .dot-11 {
   top: 5%;
   left: 40%;
@@ -204,7 +198,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 7s;
   animation-duration: 16s, 2.4s;
 }
-
 .dot-12 {
   top: 85%;
   left: 10%;
@@ -213,7 +206,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 9s;
   animation-duration: 14s, 3.6s;
 }
-
 .dot-13 {
   top: 25%;
   left: 25%;
@@ -222,7 +214,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 10s;
   animation-duration: 18s, 2.6s;
 }
-
 .dot-14 {
   top: 75%;
   left: 75%;
@@ -231,7 +222,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 11s;
   animation-duration: 12s, 3.8s;
 }
-
 .dot-15 {
   top: 35%;
   left: 95%;
@@ -240,7 +230,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 13s;
   animation-duration: 15s, 2.3s;
 }
-
 .dot-16 {
   top: 95%;
   left: 45%;
@@ -249,7 +238,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 15s;
   animation-duration: 13s, 3.3s;
 }
-
 .dot-17 {
   top: 45%;
   left: 65%;
@@ -258,7 +246,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 16s;
   animation-duration: 17s, 2.8s;
 }
-
 .dot-18 {
   top: 65%;
   left: 35%;
@@ -267,7 +254,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 17s;
   animation-duration: 19s, 3.4s;
 }
-
 .dot-19 {
   top: 55%;
   left: 55%;
@@ -276,7 +262,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-delay: 18s;
   animation-duration: 14s, 2.1s;
 }
-
 .dot-20 {
   top: 12%;
   left: 88%;
@@ -286,6 +271,7 @@ body:has(.navbar-trigger:hover)::before {
   animation-duration: 16s, 3.7s;
 }
 
+/* === Contenu au-dessus du fond === */
 .content {
   position: relative;
   z-index: 1;
@@ -339,13 +325,13 @@ body:has(.navbar-trigger:hover)::before {
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
 }
 
+/* === Navbar === */
 .navbar {
   position: fixed;
   top: -50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -353,13 +339,10 @@ body:has(.navbar-trigger:hover)::before {
   border-top: none;
   border-radius: 0 0 20px 20px;
   padding: 1rem 2rem;
-
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
 .navbar:hover {
   top: 0;
 }
@@ -378,6 +361,7 @@ body:has(.navbar-trigger:hover)::before {
   opacity: 0.8;
 }
 
+/* La zone cliquable en haut (doit être un <a href="#menu"> côté HTML) */
 .navbar-trigger {
   position: fixed;
   top: 0;
@@ -387,7 +371,6 @@ body:has(.navbar-trigger:hover)::before {
   z-index: 99;
   pointer-events: auto;
 }
-
 .navbar-trigger:hover + .navbar {
   top: 0;
 }
@@ -398,7 +381,6 @@ body:has(.navbar-trigger:hover)::before {
   gap: 1.5rem;
   color: white;
 }
-
 .navbar-logo {
   font-family: var(--display-font);
   font-size: 1.2rem;
@@ -408,13 +390,11 @@ body:has(.navbar-trigger:hover)::before {
   white-space: nowrap;
   flex-shrink: 0;
 }
-
 .navbar-links {
   display: flex;
   gap: 1rem;
   list-style: none;
 }
-
 .navbar-links a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
@@ -424,13 +404,13 @@ body:has(.navbar-trigger:hover)::before {
   padding: 0.5rem 1rem;
   border-radius: 15px;
 }
-
 .navbar-links a:hover {
   color: #4ecdc4;
   background: rgba(255, 255, 255, 0.1);
   text-shadow: 0 0 5px rgba(78, 205, 196, 0.3);
 }
 
+/* Anim de contenu */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -442,25 +422,48 @@ body:has(.navbar-trigger:hover)::before {
   }
 }
 
+/* === Mode mobile/tactile (on garde hover/pointer, on retire SEULEMENT le blur du voile) === */
+@media (hover: none) and (pointer: coarse) {
+  /* Voile sans blur pour éviter l’effet blanc et les lags sur iOS */
+  body::before {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(52, 98, 189, 0.06) !important;
+  }
+  /* Évite les glitchs de fixed avec la barre d’adresse iOS */
+  .background-dots {
+    position: absolute !important;
+  }
+}
+
+/* === Ouverture sans JS avec :target === */
+/* Nécessite: <a class="navbar-trigger" href="#menu"> et <nav id="menu" class="navbar"> */
+body:has(#menu:target)::before {
+  opacity: 1;
+}
+#menu:target {
+  top: 0;
+}
+#menu {
+  scroll-margin-top: 0;
+} /* évite un saut visible d’ancre */
+
+/* Responsive */
 @media (max-width: 1024px) {
   .navbar {
     padding: 1rem 1.5rem;
     top: -50px;
   }
-
   .navbar-content {
     gap: 1.2rem;
   }
-
   .navbar-links {
     gap: 0.9rem;
   }
-
   .navbar-links a {
     font-size: 1.1rem;
     padding: 0.45rem 0.9rem;
   }
-
   .navbar-logo {
     font-size: 1.15rem;
   }
@@ -471,38 +474,30 @@ body:has(.navbar-trigger:hover)::before {
     padding: 0.8rem 1rem;
     top: -35px;
   }
-
   .navbar-content {
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .navbar-links {
     gap: 0.8rem;
   }
-
   .navbar-links a {
     font-size: 1rem;
     padding: 0.4rem 0.8rem;
   }
-
   .navbar-logo {
     display: none;
   }
-
   .title {
     font-size: 2rem;
   }
-
   .subtitle {
     font-size: 1rem;
   }
-
   .btn {
     padding: 0.8rem 1.5rem;
   }
-
   .dot-11,
   .dot-12,
   .dot-13,
@@ -525,32 +520,26 @@ body:has(.navbar-trigger:hover)::before {
     left: 50%;
     transform: translateX(-50%);
   }
-
   .navbar-content {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
-
   .navbar-links {
     gap: 0.5rem;
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .navbar-links a {
     font-size: 0.9rem;
     padding: 0.3rem 0.6rem;
   }
-
   .navbar-logo {
     display: none;
   }
-
   .title {
     font-size: 1.5rem;
   }
-
   .subtitle {
     font-size: 0.9rem;
   }

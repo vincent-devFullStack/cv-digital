@@ -15,9 +15,9 @@
     />
   </head>
   <body>
-    <!-- Navbar avec effet hover -->
-    <div class="navbar-trigger"></div>
-    <nav class="navbar">
+    <a class="navbar-trigger" href="#menu" aria-label="Ouvrir le menu"></a>
+
+    <nav id="menu" class="navbar">
       <div class="navbar-content">
         <a href="index.html" class="navbar-logo">Vincent S.</a>
         <ul class="navbar-links">
@@ -61,7 +61,6 @@
         </p>
 
         <div class="contact-layout">
-          <!-- Formulaire de contact -->
           <div class="contact-form-section">
             <h2 class="section-title">Envoyez-moi un message</h2>
             <form
@@ -74,20 +73,17 @@
                 name="access_key"
                 value="a0582b77-f12f-4515-9dae-489a82b61b4f"
               />
-
               <input
                 type="hidden"
                 name="redirect"
                 value="https://vincent-devfullstack.github.io/cv-digital/merci.html"
               />
-
               <input
                 type="checkbox"
                 name="botcheck"
                 class="hidden"
                 style="display: none"
               />
-
               <input
                 type="hidden"
                 name="subject"
@@ -172,7 +168,6 @@
             </form>
           </div>
 
-          <!-- Informations de contact -->
           <div class="contact-info-section">
             <h2 class="section-title">Informations de contact</h2>
 
@@ -184,9 +179,8 @@
                   <a
                     href="mailto:vincent.silvestri@epitech.eu"
                     class="contact-value"
+                    >vincent.silvestri@epitech.eu</a
                   >
-                    vincent.silvestri@epitech.eu
-                  </a>
                 </div>
               </div>
 
@@ -215,9 +209,8 @@
                     href="https://www.vince-dev.fr"
                     class="contact-value"
                     target="_blank"
+                    >www.vince-dev.fr</a
                   >
-                    www.vince-dev.fr
-                  </a>
                 </div>
               </div>
             </div>
@@ -230,8 +223,8 @@
                 urgentes, n'hésitez pas à le préciser dans votre message.
               </p>
             </div>
+
             <div class="cv-actions">
-              <!-- Télécharger -->
               <a
                 class="download-btn"
                 href="assets/CV_Vincent_SILVESTRI.pdf"
@@ -240,8 +233,6 @@
                 <span class="download-btn__icon" aria-hidden="true"></span>
                 Télécharger mon CV
               </a>
-
-              <!-- Voir dans un onglet (icône œil) -->
               <a
                 class="download-btn download-btn--ghost"
                 href="assets/CV_Vincent_SILVESTRI.pdf"
