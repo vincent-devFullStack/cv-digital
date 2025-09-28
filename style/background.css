@@ -21,6 +21,26 @@ body {
   position: relative;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+
+  background: rgba(52, 98, 189, 0.189);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+
+body:has(.navbar:hover)::before,
+body:has(.navbar:focus-within)::before,
+body:has(.navbar-trigger:hover)::before {
+  opacity: 1;
+}
+
 .background-dots {
   position: fixed;
   top: 0;
