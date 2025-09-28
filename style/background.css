@@ -421,14 +421,26 @@ body:has(.navbar-trigger:hover)::before {
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
-  body::before {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: rgba(52, 98, 189, 0.06) !important;
+/* Desktop : hover fonctionne */
+@media (hover: hover) and (pointer: fine) {
+  .navbar:hover {
+    top: 0;
   }
-  .background-dots {
-    position: absolute !important;
+  body:has(.navbar:hover)::before {
+    opacity: 1;
+  }
+}
+
+/* Mobile : on force target pour ouvrir/fermer */
+@media (hover: none) and (pointer: coarse) {
+  #menu:target {
+    top: 0;
+  }
+  #menu:target + .navbar-overlay {
+    display: block;
+  }
+  body:has(#menu:target)::before {
+    opacity: 1;
   }
 }
 
