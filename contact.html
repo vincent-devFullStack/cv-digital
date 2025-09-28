@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vincent Silvestri - Contact</title>
+    <link
+      rel="stylesheet"
+      href="/T-WEB-500-digitalResume-NCE_vincent-silvestri/style/background.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/T-WEB-500-digitalResume-NCE_vincent-silvestri/style/contact.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Rubik+Bubbles&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar avec effet hover -->
+    <div class="navbar-trigger"></div>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="index.html" class="navbar-logo">Vincent S.</a>
+        <ul class="navbar-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="profil.html">Compétences</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="background-dots">
+      <div class="dot dot-1"></div>
+      <div class="dot dot-2"></div>
+      <div class="dot dot-3"></div>
+      <div class="dot dot-4"></div>
+      <div class="dot dot-5"></div>
+      <div class="dot dot-6"></div>
+      <div class="dot dot-7"></div>
+      <div class="dot dot-8"></div>
+      <div class="dot dot-9"></div>
+      <div class="dot dot-10"></div>
+      <div class="dot dot-11"></div>
+      <div class="dot dot-12"></div>
+      <div class="dot dot-13"></div>
+      <div class="dot dot-14"></div>
+      <div class="dot dot-15"></div>
+      <div class="dot dot-16"></div>
+      <div class="dot dot-17"></div>
+      <div class="dot dot-18"></div>
+      <div class="dot dot-19"></div>
+      <div class="dot dot-20"></div>
+    </div>
+
+    <div class="profil-container">
+      <div class="profil-content">
+        <h1 class="profil-title">Me Contacter</h1>
+        <p class="profil-subtitle-main">
+          Vous avez un projet ? Une opportunité ? Parlons-en !
+        </p>
+
+        <div class="contact-layout">
+          <!-- Formulaire de contact -->
+          <div class="contact-form-section">
+            <h2 class="section-title">Envoyez-moi un message</h2>
+            <form
+              class="contact-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="a0582b77-f12f-4515-9dae-489a82b61b4f"
+              />
+
+              <input
+                type="hidden"
+                name="redirect"
+                value="http://127.0.0.1:5500/T-WEB-500-digitalResume-NCE_vincent-silvestri/merci.html"
+              />
+
+              <input
+                type="hidden"
+                name="subject"
+                value="Nouveau message depuis votre CV digital"
+              />
+
+              <div class="form-group">
+                <label for="name" class="form-label">Nom & Prénom</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  required
+                  placeholder="Votre nom complet"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  required
+                  placeholder="votre@email.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company" class="form-label"
+                  >Entreprise (optionnel)</label
+                >
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="form-input"
+                  placeholder="Nom de votre entreprise"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="contact_subject" class="form-label">Sujet</label>
+                <select
+                  id="contact_subject"
+                  name="contact_subject"
+                  class="form-select"
+                  required
+                >
+                  <option value="">Choisir un sujet</option>
+                  <option value="Opportunité d'emploi">
+                    Opportunité d'emploi
+                  </option>
+                  <option value="Contrat d'apprentissage">
+                    Contrat d'apprentissage
+                  </option>
+                  <option value="Collaboration projet">
+                    Collaboration projet
+                  </option>
+                  <option value="Freelance/Mission">Freelance/Mission</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  rows="6"
+                  required
+                  placeholder="Décrivez votre projet, vos besoins ou votre opportunité..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+
+          <!-- Informations de contact -->
+          <div class="contact-info-section">
+            <h2 class="section-title">Informations de contact</h2>
+
+            <div class="contact-card">
+              <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-details">
+                  <h3 class="contact-label">Email</h3>
+                  <a
+                    href="mailto:vincent.silvestri@epitech.eu"
+                    class="contact-value"
+                  >
+                    vincent.silvestri@epitech.eu
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-details">
+                  <h3 class="contact-label">Localisation</h3>
+                  <p class="contact-value">Nice, Sophia-Antipolis, Monaco</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">💼</div>
+                <div class="contact-details">
+                  <h3 class="contact-label">Disponibilité</h3>
+                  <p class="contact-value">Recherche contrat d'apprentissage</p>
+                  <p class="contact-sub">Janvier 2026 - 3 ans</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <div class="contact-details">
+                  <h3 class="contact-label">Portfolio</h3>
+                  <a
+                    href="https://www.vince-dev.fr"
+                    class="contact-value"
+                    target="_blank"
+                  >
+                    www.vince-dev.fr
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="response-info">
+              <h3 class="response-title">Temps de réponse</h3>
+              <p class="response-text">
+                Je m'engage à répondre à tous les messages dans les
+                <span class="highlight">24-48h</span>. Pour les opportunités
+                urgentes, n'hésitez pas à le préciser dans votre message.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="back-navigation">
+          <a href="index.html" class="nav-btn secondary">Accueil</a>
+          <a href="projets.html" class="nav-btn primary">Mes projets</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

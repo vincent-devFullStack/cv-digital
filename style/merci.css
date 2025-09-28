@@ -1,0 +1,363 @@
+/* Container principal */
+.profil-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  /* Effet verre Apple */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 2rem;
+  min-width: 320px;
+  max-width: 1000px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  /* Cacher la barre de scroll */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  /* Ombres multiples */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 16px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+
+  /* Animation */
+  opacity: 0;
+  animation: popInCentered 0.8s ease-out 0.2s both;
+}
+
+.profil-container::-webkit-scrollbar {
+  display: none;
+}
+
+.profil-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: scaleIn 0.8s ease-out 0.8s both;
+}
+
+.profil-title {
+  font-family: var(--display-font);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: #4ecdc4;
+  text-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s both;
+}
+
+.profil-subtitle-main {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.2s both;
+}
+
+.message-details {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.detail-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.4s both;
+}
+
+.detail-title {
+  font-family: var(--display-font);
+  font-size: 1.5rem;
+  color: #4ecdc4;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+}
+
+.timeline-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.step-number {
+  background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+.step-content h3 {
+  color: #feca57;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.step-content p {
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.contact-recap {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.6s both;
+}
+
+.suggestion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.suggestion-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+.suggestion-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(78, 205, 196, 0.2);
+  border-color: #4ecdc4;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.suggestion-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.suggestion-card h3 {
+  color: #4ecdc4;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.suggestion-card p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.additional-contact {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.8s both;
+}
+
+.urgent-text {
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.email-direct {
+  display: inline-block;
+  background: linear-gradient(135deg, #feca57, #ff9ff3);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(254, 202, 87, 0.3);
+}
+
+.email-direct:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(254, 202, 87, 0.4);
+}
+
+/* Navigation */
+.back-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 2s both;
+}
+
+.nav-btn {
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.nav-btn.primary {
+  background: linear-gradient(135deg, #4ecdc4 0%, #45b7d1 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+.nav-btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+}
+
+.nav-btn.primary:hover {
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+}
+
+.nav-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Animations */
+@keyframes popInCentered {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profil-container {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .profil-title {
+    font-size: 2rem;
+  }
+
+  .success-icon {
+    font-size: 3rem;
+  }
+
+  .detail-card,
+  .contact-recap,
+  .additional-contact {
+    padding: 1.5rem;
+  }
+
+  .suggestion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .back-navigation {
+    flex-direction: column;
+  }
+
+  .timeline-steps {
+    gap: 1rem;
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profil-container {
+    padding: 1rem;
+  }
+
+  .profil-title {
+    font-size: 1.8rem;
+  }
+
+  .detail-title {
+    font-size: 1.3rem;
+  }
+
+  .success-icon {
+    font-size: 2.5rem;
+  }
+
+  .detail-card,
+  .contact-recap,
+  .additional-contact {
+    padding: 1rem;
+  }
+}
