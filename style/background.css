@@ -271,7 +271,6 @@ body:has(.navbar-trigger:hover)::before {
   animation-duration: 16s, 3.7s;
 }
 
-/* === Contenu au-dessus du fond === */
 .content {
   position: relative;
   z-index: 1;
@@ -422,22 +421,17 @@ body:has(.navbar-trigger:hover)::before {
   }
 }
 
-/* === Mode mobile/tactile (on garde hover/pointer, on retire SEULEMENT le blur du voile) === */
 @media (hover: none) and (pointer: coarse) {
-  /* Voile sans blur pour éviter l’effet blanc et les lags sur iOS */
   body::before {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     background: rgba(52, 98, 189, 0.06) !important;
   }
-  /* Évite les glitchs de fixed avec la barre d’adresse iOS */
   .background-dots {
     position: absolute !important;
   }
 }
 
-/* === Ouverture sans JS avec :target === */
-/* Nécessite: <a class="navbar-trigger" href="#menu"> et <nav id="menu" class="navbar"> */
 body:has(#menu:target)::before {
   opacity: 1;
 }
@@ -446,7 +440,18 @@ body:has(#menu:target)::before {
 }
 #menu {
   scroll-margin-top: 0;
-} /* évite un saut visible d’ancre */
+}
+
+.navbar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+
+#menu:target + .navbar-overlay {
+  display: block;
+}
 
 /* Responsive */
 @media (max-width: 1024px) {
